@@ -28,6 +28,7 @@
 #include <string.h>
 #include <assert.h>
 #include <time.h>
+#include <limits.h>
 
 #include "rtmp_sys.h"
 #include "log.h"
@@ -754,7 +755,7 @@ int RTMP_SetOpt(RTMP *r, const AVal *opt, AVal *arg)
   return TRUE;
 }
 
-int RTMP_SetupURL(RTMP *r, char *url)
+int RTMP_SetupURL(RTMP *r, const char *url)
 {
   AVal opt, arg;
   char *p1, *p2, *ptr = strchr(url, ' ');
